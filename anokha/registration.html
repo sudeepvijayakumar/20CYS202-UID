@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+    <html>
+       <head>
+          <title>Registration Form</title>
+          <style>body
+          {background-color: #CCD1D1;}
+            
+             .error {color: #FF0000;}
+          </style>
+       </head>
+       <body> 
+        <center>
+          <h2>Registration Form</h2><br><br>
+          <p><span class="error">* required field</span></p>
+          <form method="post" action="/action_page.php">
+             <label for="text">Name:</label><br>
+  <input type="text" id="text" onchange="nameValdie()"><br>
+
+             <span class="error">* </span>
+             <br><br>
+             E-mail: <input type="email" name="email" required>
+             <span class="error">* </span>
+             <br><br>
+             Website: <input type="url" name="website" required>
+             <span class="error">*</span>
+             <br><br>
+             Comment: <textarea name="comment" rows="5" cols="40" required></textarea>
+             <span class="error">*</span>
+             <br><br>
+             Gender:
+             <input type="radio" name="gender" value="female" required>Female
+             <input type="radio" name="gender" value="male" required>Male
+             <span class="error">*</span>
+             <br><br>
+             <input type="submit" name="submit" value="Submit">  
+          </form>
+        </center>
+          <script>
+           function nameValdie()   {
+  me = document.getElementById("text").value
+  const regex = /^[a-zA-Z\s]+$/ 
+  if (!!me.match(regex) == false) {
+    alert("Not a valid Name")
+    return false
+  }
+  return true
+}
+</script>
+       </body>
+    </html>
